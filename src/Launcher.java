@@ -8,10 +8,11 @@ public static void main(String[] args)
 
     Scanner variable = new java.util.Scanner(System.in);
     String mot = variable.nextLine();
-
-    if (mot != "quit")
+    while (!mot.equals("quit"))
     {
         System.out.println("Unknown command");
+        variable = new java.util.Scanner(System.in);
+        mot = variable.nextLine();
     }
 }
 }
