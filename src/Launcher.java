@@ -1,18 +1,52 @@
+import java.io.IOException;
 import java.util.*;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 class Launcher
 {
-public static void main(String[] args)
-{
-    System.out.println("Bienvenue jeune padawan.");
+    public static void main(String[] args) throws IOException {
+        System.out.println("Bienvenue jeune padawan.");
 
-    Scanner variable = new java.util.Scanner(System.in);
-    String mot = variable.nextLine();
-    while (!mot.equals("quit"))
-    {
-        System.out.println("Unknown command");
-        variable = new java.util.Scanner(System.in);
-        mot = variable.nextLine();
+        Scanner variable = new java.util.Scanner(System.in);
+        String mot = variable.nextLine();
+
+
+        while (!mot.equals("quit"))
+        {
+            if (mot.equals("fibo"))
+            {
+                //fibo
+                int n0=0;
+                int n1=1;
+                int n2=1;
+                System.out.println("Vous avez lancé une suite de Fibonacci.\nEcrivez un nombre n pour connaitre la valeur de la suite au rang n.");
+                Scanner index = new java.util.Scanner(System.in);
+                int n = Integer.parseInt(index.nextLine());
+                if (n==0)
+                    n2=0;
+                if (n==1)
+                    n2=1;
+                else {
+                    for (int i = 2; i <= n; i++) {
+                        n2 = n0 + n1;
+                        n0 = n1;
+                        n1 = n2;
+                    }
+                }
+                System.out.println("La valeur de l'index " + n + " de la suite de Fibonacci est :" + n2);
+            }
+                else
+                {
+                    System.out.println("Unreadable file: "+chem);
+                }
+
+            }
+            else {
+                System.out.println("Unknown command");
+            }
+            variable = new java.util.Scanner(System.in);
+            mot = variable.nextLine();
+        }
     }
-}
 }
